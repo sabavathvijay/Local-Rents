@@ -1,0 +1,69 @@
+#home {
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+   
+    gap: 10px;
+    padding: 10px;
+
+    background: linear-gradient(135deg, #6e7782, #872dd6);
+ background: url("../../assets/BG/home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: auto;
+    color: aliceblue;
+  
+}
+
+.homeContainer{
+    min-width:70% ;
+    width: auto;
+    padding: 10px;
+    height: auto;
+    background-color: rgba(79, 136, 194, 0.695);
+    
+    border-radius: 35px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   
+    position: relative;
+}
+.info{
+/* 
+    position: absolute;
+    top: 20%; */
+  min-width:90% ;
+    left: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+    gap: 20px;
+
+}
+
+.signup{
+    border:solid  #a483ba0e;padding: 1px;
+
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(104, 96, 182, 0.912);
+    color: #eaeaee;
+    outline: none;
+    cursor: pointer;
+}
+.signup span{
+ 
+    width: fit-content;
+
+  
+}

@@ -1,0 +1,134 @@
+/* Navbar.css */
+
+/* Base styles */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #303e62;
+  color: #fff;
+  min-height: 60px;
+  padding: 10px;
+
+ 
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Pages container */
+.pages {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.pages div{
+ display: flex;
+ align-items: center;
+ width: fit-content;
+ /* background-color: aqua; */
+ max-width: fit-content;
+  justify-content: center;
+   border-radius: 10px;
+   padding: 2px;
+}
+
+.pages div button {
+  background: #d08a2eef;
+ 
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  max-width: fit-content;
+  border-radius: 15px;
+ 
+}
+
+.pages div button:hover {
+  background: #4966cc;
+}
+
+/* Profile icon */
+.profile span {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Mobile-first: stack items */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pages {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+
+  .pages div {
+    width: 100%;
+  }
+
+  .pages div button {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Larger screens: horizontal layout */
+@media (min-width: 769px) {
+  .pages {
+    flex-direction: row;
+  }
+}
+@media (max-width: 500px) {
+ nav {
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
+  align-items: center;
+  background: #303e62;
+  color: #fff;
+  /* min-height: 60px; */
+  /* padding: 10px; */
+font-size: small;
+ 
+}
+.logo {
+  /* background-color: #303e62; */
+  font-size: 1.4rem;
+  display: flex;
+  justify-self: start;
+  font-weight: bold;
+}
+
+
+
+.pages{
+    display: flex;
+
+  justify-content: space-between;
+}
+.pages div {
+  display: flex;
+
+  justify-content: space-around;
+  flex-direction: row;
+  background: #d08a2eef;
+ 
+ 
+ 
+}
+}
+
+
+
+

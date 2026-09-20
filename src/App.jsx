@@ -1,121 +1,74 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import React, { useState } from 'react'
+import Navbar from './Components/Navbar/Navbar'
+
+
+import { Suspense,lazy } from 'react';
+import { MyContextAPI } from './Components/Configs/ContextAPI/MyContextAPI'
+
+
+import { Route, Routes } from 'react-router-dom'
+
 import './App.css'
+import { ToastContainer } from 'react-toastify';
+import Loading from './Components/Loader/Loading';
+// Lazy Loading
+const Home = lazy(() => import('./Components/Home/Home'));
+const Login = lazy(() => import('./Pages/Login/Login'));
+const Register = lazy(() => import('./Pages/Register/Register'));
+const UserDashboard = lazy(() => import('./Components/Dashboards/UserDashboard/UserDashboard'));
+const AdminDashboard = lazy(() => import('./Components/Dashboards/AdminDashboard/AdminDashboard'));
+const OwnerDashboard = lazy(() => import('./Components/Dashboards/OwnerDashboard/OwnerDashboard'));
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const App = () => { 
+
+  //states
+  const [status, setStatus] = useState(JSON.parse(localStorage.getItem("status")) || "home")
+  const [user, setUser] = useState( JSON.parse(localStorage.getItem("users"))||{
+  
+          email: "",
+          password: "",
+          role: ""
+      }
+  
+      )
+
+
+
+  localStorage.setItem("logedIn", "logedIn")
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="">
 
-      <div className="ticks"></div>
+      <MyContextAPI.Provider value={{ status, setStatus,user, setUser }} >
+      
+      <div className="app">
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="nav">
+           <Navbar />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+       <main id='main'>
+         <Suspense fallback={<Loading/>}>
+          <Routes>
+
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/user-dashboard' element={<UserDashboard />} />
+            <Route path='/owner-dashboard' element={<OwnerDashboard />} />
+            <Route path='/admin-dashboard' element={<AdminDashboard />} />
+
+          </Routes>
+        </Suspense>
+       </main>
+      </div>
+
+
+      </MyContextAPI.Provider>
+      <ToastContainer/>
+    </div>
   )
 }
 

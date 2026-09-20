@@ -1,0 +1,29 @@
+#loader{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(61, 91, 172, 0.59);
+}
+
+.load{
+
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-top: solid 2px grey;
+    border-bottom: solid 2px rgb(246, 244, 244);
+    animation: load 1s linear;
+
+}
+@keyframes load {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}

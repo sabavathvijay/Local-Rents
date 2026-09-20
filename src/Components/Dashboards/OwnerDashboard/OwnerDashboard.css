@@ -1,0 +1,23 @@
+#owner{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(196, 196, 45);
+    display: flex;
+
+}
+
+#owner .aside{
+
+    width: 25%;
+    background-color: aquamarine;
+    min-height: 100%;
+
+}
+
+#owner .main{
+
+    width: 75%;
+    background-color: rgb(131, 147, 215);
+    min-height: 100%;
+    
+}
