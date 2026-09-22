@@ -10,7 +10,10 @@ import { Route, Routes } from 'react-router-dom'
 
 import './App.css'
 import { ToastContainer } from 'react-toastify';
+import { h2 } from 'framer-motion/client';
 import Loading from './Components/Loader/Loading';
+
+
 // Lazy Loading
 const Home = lazy(() => import('./Components/Home/Home'));
 const Login = lazy(() => import('./Pages/Login/Login'));
@@ -18,6 +21,7 @@ const Register = lazy(() => import('./Pages/Register/Register'));
 const UserDashboard = lazy(() => import('./Components/Dashboards/UserDashboard/UserDashboard'));
 const AdminDashboard = lazy(() => import('./Components/Dashboards/AdminDashboard/AdminDashboard'));
 const OwnerDashboard = lazy(() => import('./Components/Dashboards/OwnerDashboard/OwnerDashboard'));
+const UserProfile = lazy(() => import('./Components/Profiles/UserProfile'));
 
 
 const App = () => { 
@@ -49,8 +53,9 @@ const App = () => {
       
 
        <main id='main'>
-         <Suspense fallback={<Loading/>}>
+         <Suspense fallback={   <Loading/>}>
           <Routes>
+          
 
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -59,9 +64,11 @@ const App = () => {
             <Route path='/user-dashboard' element={<UserDashboard />} />
             <Route path='/owner-dashboard' element={<OwnerDashboard />} />
             <Route path='/admin-dashboard' element={<AdminDashboard />} />
+            <Route path='/profile' element={<UserProfile />} />
 
           </Routes>
         </Suspense>
+    
        </main>
       </div>
 

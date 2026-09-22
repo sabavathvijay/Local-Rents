@@ -1,0 +1,8 @@
+#sideAbout{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    flex: 1;
+    background-color: rgb(230, 174, 61);
+} 

@@ -26,7 +26,8 @@ gap: 2px;
 
 #main{
 
-
+display: flex;
+min-height: 100vh;
   width: 100%;
  
   background-color: antiquewhite;

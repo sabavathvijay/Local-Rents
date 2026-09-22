@@ -8,14 +8,16 @@ import { MyContextAPI } from '../Configs/ContextAPI/MyContextAPI'
 
 
 
+
 const Navbar = () => {
 
     let nav =useNavigate();
 
 
     const { status, setStatus } = useContext(MyContextAPI);
+    const {user, setUser} = useContext(MyContextAPI);
     
-    const user =JSON.parse(localStorage.getItem("users"))
+    const users =JSON.parse(localStorage.getItem("users"))
 
     // const updateStatus = () => {
     //     setStatus("logedIn")
@@ -37,9 +39,9 @@ const Navbar = () => {
                 {/* //Role */}
                 {/* //Logout */}
                 {
-                    status === "logedIn" && <>
+                    status === "logedIn" &&  <>
 
-                        <div className="user-role"><b>{user.role}:</b><span>{user.name}</span></div>
+                        <div className="user-role"><b>{users.role}:</b><span>{users.name}</span></div>
                         <div className="log-out">
                             <button
                                 onClick={() => {
@@ -60,7 +62,7 @@ const Navbar = () => {
                 {/* //Pages */}
 
                 {
-                    status === "home" &&
+                    status === "home" && 
                     <>
                         <div className="register">
                             <button
@@ -139,10 +141,15 @@ const Navbar = () => {
 
                 {
 
-                    status === "logedIn" &&
+                    status === "logedIn" && 
                     <>
                         <div className="profile">
-                            <span>👤</span>
+                            <span
+                            onClick={()=>{
+                            //    alert("click")
+                                nav("./profile", {state:{user}})
+                            }}
+                            >👤</span>
 
                         </div>
 
