@@ -83,6 +83,7 @@ const Login = () => {
 
     const validateUser = async () => {
 
+        if(fetchedUser!==null){
         if (fetchedUser.email === users.email && fetchedUser.password === users.password && fetchedUser.role === users.role) {
 
             localStorage.getItem("users", fetchedUser);
@@ -119,9 +120,10 @@ const Login = () => {
             })
 
 
-        }
+        }}
         else{
               toast.warning("Invalid User");
+              nav("/register")
                setUsers({
                 email: "",
                 password: "",
@@ -131,7 +133,7 @@ const Login = () => {
             
 
 
-                
+           
         }
 
 

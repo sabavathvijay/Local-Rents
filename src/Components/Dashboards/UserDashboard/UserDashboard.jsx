@@ -1,6 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+
+// Icons
+import { CgProfile } from "react-icons/cg";
+import { CgLogOut } from "react-icons/cg";
+import { CgMenuGridR } from "react-icons/cg";
+
+
+
+
 import './UserDashboard.css'
 import About from './SidePages/About'
 import Contact from './SidePages/Contact'
@@ -9,10 +18,13 @@ import { useContext } from 'react'
 import { MyContextAPI } from '../../Configs/ContextAPI/MyContextAPI'
 
 import Rents from './SidePages/Rents'
+import Goto from '../../CustomComp/Goto'
 
 const UserDashboard = () => {
   const [click, setClick] = useState("")
+  const [open, setOpen] = useState(false)
   const { status, setStatus } = useContext(MyContextAPI);
+  const { user, setUser } = useContext(MyContextAPI);
 
   const nav = useNavigate()
 
@@ -74,44 +86,80 @@ const UserDashboard = () => {
 
   return (
     <div id='user'>
-      <div className="aside">
 
-        <div className="links">
-          <span
-            onClick={() => {
-              setClick("rents")
-            }}
-          >
-            Rents
-          </span>
-          <span
-            onClick={() => {
-              setClick("about")
-            }}
-          >
-            About
-          </span>
-          <span
-            onClick={() => {
-              setClick("contact")
-              alert("hh")
-            }}
-          >
-            Contact
-          </span>
-        </div>
-        <div className="out">
-          <span
-          ><button
+ <div id='open'
 
-          
-
-          >
-              logOut
-            </button></span>
+          onClick={() => {
+            setOpen(!open)
+           
+          }}
+        >
+     <span><CgMenuGridR /></span>
         </div>
 
+      <div className={open?"aside ":"open"}>
 
+        <div className="subAside">
+
+          <div className="links">
+            <span
+              onClick={() => {
+                setClick("Top")
+                nav("/profile")
+              }}
+            >
+              <CgProfile />
+            </span>
+            <span
+              onClick={() => {
+                setClick("rents")
+              }}
+            >
+              Rents
+            </span>
+            <span
+              onClick={() => {
+                setClick("about")
+              }}
+            >
+              About
+            </span>
+            <span
+              onClick={() => {
+                setClick("contact")
+
+              }}
+            >
+              Contact
+
+
+            </span>
+            <Goto name={"Home"} route={"home"} />
+          </div>
+
+
+
+          {/* Log-Out */}
+          <div className="out">
+            <span
+            ><button
+              onClick={() => {
+                // alert("go-out")
+                setStatus("home")
+                localStorage.setItem("users", null)
+                setUser(null)
+                localStorage.setItem("status", "home")
+                localStorage.clear
+                nav('/home')
+              }}
+            >
+                <CgLogOut />
+
+              </button></span>
+          </div>
+
+        </div>
+       
       </div>
       <div className="main">
 

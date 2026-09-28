@@ -27,8 +27,8 @@ const UserProfile = lazy(() => import('./Components/Profiles/UserProfile'));
 const App = () => { 
 
   //states
-  const [status, setStatus] = useState(JSON.parse(localStorage.getItem("status")) || "home")
-  const [user, setUser] = useState( JSON.parse(localStorage.getItem("users"))||{
+  const [status, setStatus] = useState((localStorage.getItem("status")) || "home")
+  const [user, setUser] = useState( (localStorage.getItem("users"))||{
   
           email: "",
           password: "",
@@ -37,6 +37,8 @@ const App = () => {
   
       )
 
+
+      console.log("USER ===> ",user)
 
 
   localStorage.setItem("logedIn", "logedIn")
@@ -61,10 +63,10 @@ const App = () => {
             <Route path='/home' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/user-dashboard' element={<UserDashboard />} />
-            <Route path='/owner-dashboard' element={<OwnerDashboard />} />
-            <Route path='/admin-dashboard' element={<AdminDashboard />} />
-            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/User-dashboard' element={<UserDashboard />} />
+            <Route path='/Owner-dashboard' element={<OwnerDashboard />} />
+            <Route path='/Admin-dashboard' element={<AdminDashboard />} />
+            <Route path='/Profile' element={<UserProfile />} />
 
           </Routes>
         </Suspense>

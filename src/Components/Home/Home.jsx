@@ -32,16 +32,17 @@ const Home = () => {
           <center>
             <p>Here you can find everything YOU want</p>
             <h3>"EVERY-THING"</h3>
+          <p>HERE you can also RENT your's ASSETs & WORK as a service services Person..</p>
           </center>
 
-          <p>HERE you can also RENT your's ASSETs & WORK as a service services Person..</p>
 
 
 
           <center>
+            
             <motion.div className="signup"
               onClick={() => {
-                nav('./login')
+                nav('/login')
                 setStatus("login")
 
               }}
@@ -52,8 +53,14 @@ const Home = () => {
                 width: "50%", padding: "10px", margin: "auto", border: "1px solid white", display: "flex", justifyContent: "center", alignItems: "center"
               }}
             >
+
+
+
               <span> Sign-Up</span>
             </motion.div>
+
+
+
           </center>
 
 
