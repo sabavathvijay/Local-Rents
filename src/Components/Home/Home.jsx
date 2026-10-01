@@ -50,6 +50,7 @@ const Home = () => {
               onClick={() => {
                 nav('/login')
                 setStatus("login")
+                localStorage.setItem("users",null)
 
               }}
 

@@ -5,6 +5,7 @@
   justify-content: center;
   flex: 1;
   
+  height: auto;
   flex-direction: column;
   background-color: rgba(53, 52, 50, 0.437);
 
@@ -13,13 +14,29 @@
 #title{
     width: 100%;
     padding: 10px;
-    height:10%;
+    height:70px;
   display: flex;
   background-color: rgba(178, 101, 179, 0.53);
   align-items: center;
+  font-size: smaller;
   justify-content: center;
 }
 
+.content{
+  width: 100%;
+  margin-top: 20px;
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.contacts{
+
+   width: 100%;
+  margin-top: 20px;
+  background-color: aliceblue;
+  padding: 10px;
+
+}
 
 .subContainer{
   background-color: rgba(164, 170, 174, 0.686);

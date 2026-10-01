@@ -10,12 +10,12 @@
 
 #open{
     
-    width: 40px;
+    width: 30px;
     height: 40px;
 
     display: flex;
     position: fixed;
-    left: 2px;
+    left: -1px;
     top: 70%;
     z-index: 5;
     align-self: start;
@@ -24,7 +24,7 @@
 border-radius: 10% 50%  50% 10%;
 /* border: solid rgb(203, 192, 192); */
 text-align: center;
-    background-color: rgba(255, 252, 252, 0.359);
+    background-color: rgba(60, 58, 62, 0.742);
 }
 
 #open span{
@@ -62,6 +62,7 @@ text-align: center;
     display: flex;
     width: 100%;
     min-height: 100%;
+    
 }
 
 
@@ -122,7 +123,7 @@ color: rgb(251, 244, 248);
 
 
 .out{
-    background-color: rgba(110, 160, 197, 0.667);
+    background-color: rgb(229, 234, 238);
     width: 100%;
     display: flex;
     justify-content: center;

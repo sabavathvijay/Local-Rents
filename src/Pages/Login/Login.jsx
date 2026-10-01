@@ -17,7 +17,7 @@ const Login = () => {
 
 
     const { user, setUser } = useContext(MyContextAPI)
-    const [users,setUsers]=useState({
+    const [users, setUsers] = useState({
         email: "",
         password: "",
         role: ""
@@ -46,12 +46,12 @@ const Login = () => {
         }))
         //User
         setUser(users)
-        
-        
-        
+
+
+
     }
     setUser(users)
-    console.log("=====>>>>Users : ",users)
+    console.log("=====>>>>Users : ", users)
 
 
     //======> 3
@@ -69,7 +69,7 @@ const Login = () => {
 
         }
 
-     
+
 
 
 
@@ -84,62 +84,81 @@ const Login = () => {
 
     //======> 4
 
-    
+
 
     const validateUser = async () => {
 
-        if(fetchedUser!==null){
-        if (fetchedUser.email === users.email && fetchedUser.password === users.password && fetchedUser.role === users.role) {
+        if (fetchedUser !== null) {
+            if (fetchedUser.email === users.email && fetchedUser.password === users.password && fetchedUser.role === users.role) {
 
-            localStorage.getItem("users", fetchedUser);
-            console.log("===> From login fetchedUser into LocalStorage :", fetchedUser)
+                localStorage.getItem("users", fetchedUser);
+                console.log("===> From login fetchedUser into LocalStorage :", fetchedUser)
 
-            setStatus("logedIn")
-            // localStorage.getItem("loginedUser", user)
-            // localStorage.getItem("users", user)
-            switch (user.role) {
-                case "User":
-                    toast.success("Welcome to USER Dashboard")
-                    nav('/User-dashboard')
-                    break;
-                case "Owner":
-                     toast.success("Welcome to OWNER Dashboard")
-                    nav('/Owner-dashboard')
-                    break;
-                case "Admin":
-                  toast.success("Welcome to ADMIN Dashboard")
-                    nav('/Admin-dashboard')
-                    break;
+                setStatus("logedIn")
+                // localStorage.getItem("loginedUser", user)
+                // localStorage.getItem("users", user)
+                switch (user.role) {
+                    case "User":
+                        toast.success("Welcome to USER Dashboard")
+                        nav('/User-dashboard')
+                        break;
+                    case "Owner":
+                        toast.success("Welcome to OWNER Dashboard")
+                        nav('/Owner-dashboard')
+                        break;
+                    case "Admin":
+                        toast.success("Welcome to ADMIN Dashboard")
+                        nav('/Admin-dashboard')
+                        break;
 
-               default :
-                    toast.warning("Invalid User");
+                    default:
+                        toast.warning("Invalid User");
 
-                    break;
+                        break;
+                }
+
+
+                localStorage.setItem("users", JSON.stringify(fetchedUser))
+                setUsers({
+                    email: "",
+                    password: "",
+                    role: ""
+                })
+
+
+            }
+            else {
+                toast.warning("Invalid User");
+                setUsers({
+                    email: "",
+                    password: "",
+                    role: ""
+                })
+                nav("/register")
+                setUser(user)
+ setStatus("register")
+
+
+
             }
 
-          
-            localStorage.setItem("users",JSON.stringify(fetchedUser))
+        }
+        else {
+            toast.warning("Invalid User");
             setUsers({
                 email: "",
                 password: "",
                 role: ""
             })
+            nav("/register")
+            setStatus("register")
+
+            setUser(user)
 
 
-        }}
-        else{
-              toast.warning("Invalid User");
-              nav("/register")
-               setUsers({
-                email: "",
-                password: "",
-                role:""
-            })
-
-            
 
 
-           
+
         }
 
 
@@ -148,7 +167,7 @@ const Login = () => {
     }
 
 
-     
+
 
 
     return (
@@ -189,7 +208,7 @@ const Login = () => {
                                     handleChange(event);
                                 }}
                             >
-                                <option value=""  selected>Role</option>
+                                <option value="" selected>Role</option>
                                 <option value="User" >User</option>
                                 <option value="Owner">Owner</option>
                                 <option value="Admin">Admin</option>

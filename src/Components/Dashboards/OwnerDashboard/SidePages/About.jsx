@@ -34,9 +34,127 @@ const About = () => {
 
 
 
-        <p>
+        <div className="content">
+
+          <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sed eum perferendis accusantium ratione alias explicabo praesentium quisquam numquam. Eveniet commodi voluptate cum odio expedita alias beatae deleniti amet eligendi?
         </p>
+        </div>
+
+
+
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
+        <div className="contacts">
+
+<p>This is email: abc@gmail.com</p>
+<p>This is LinkedIN: abc234q-12</p>
+<p>This is instta: abc@gmail.com</p>
+<p>This is websile: abc.com</p>
+
+        </div>
 
       </div>
 

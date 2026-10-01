@@ -38,6 +38,8 @@ const App = () => {
       )
 
 
+      console.log("The Status: ",status)
+      console.log("The user: ",user)
      
 
 

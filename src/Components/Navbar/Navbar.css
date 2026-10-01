@@ -30,7 +30,7 @@ nav {
 }
 
 /* Pages container */
-.pages {
+.pages ,.page{
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -43,12 +43,14 @@ nav {
  max-width: fit-content;
   justify-content: center;
    border-radius: 10px;
-   padding: 10px;
+   padding: 4px;
 }
+
+
 
 .pages div button {
   background: #d08a2eef;
- 
+  border-radius: 10px;
   color: #fff;
   border: none;
   padding: 0.5rem 0.9rem;
@@ -136,12 +138,18 @@ font-size: small;
 
 .pages{
     display: flex;
-background-color: #232a39;
-padding: 10px;
-  justify-content: space-between;
+background-color: #dbddd497;
+padding: 2px;
+  justify-content: space-around;
   width: 100%;
+  border-radius: 10px;
+}
+
+.hideme{
+  display: none;
 }
 .pages div {
+  
   display: flex;
 
   justify-content: space-around;
@@ -155,4 +163,11 @@ padding: 10px;
 
 
 
-
+/* 
+.pages .login , .pages .register, .pages .home{
+  padding: 2px 2px;
+  font-size: small;
+  border-radius: 25px ;
+  border: solid whitesmoke;
+}
+ */

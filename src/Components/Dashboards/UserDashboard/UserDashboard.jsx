@@ -72,9 +72,9 @@ const UserDashboard = () => {
         return (
           <div className="main-container">
 
-            <h2>Welcome to User Dashboard</h2>
-
-
+             <div className="welcome">
+              <h2>Welcome to User Dashboard</h2>
+            </div>
           </div>
         )
 
@@ -84,24 +84,26 @@ const UserDashboard = () => {
     }
   }
 
+     console.log("The Status: ",status)
+      console.log("The user: ",user)
 
   return (
     <div id='user'>
 
- <div id='open'
+      <div id='open'
 
-          onClick={() => {
-            setOpen(!open)
-           
-          }}
-        >
-     <span>
-        {open?(<MdCancel />
-      ):(<RiMenuFold4Fill />)}
-     </span>
-        </div>
+        onClick={() => {
+          setOpen(!open)
 
-      <div className={open?"aside ":"open"}>
+        }}
+      >
+        <span>
+          {open ? (<MdCancel />
+          ) : (<RiMenuFold4Fill />)}
+        </span>
+      </div>
+
+      <div className={open ? "aside " : "open"}>
 
         <div className="subAside">
 
@@ -163,7 +165,7 @@ const UserDashboard = () => {
           </div>
 
         </div>
-       
+
       </div>
       <div className="main">
 

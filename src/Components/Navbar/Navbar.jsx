@@ -70,7 +70,6 @@ const Navbar = () => {
                         <div className="user-role"><b>{users.role}:</b><span>{users.name}</span></div>
                         <div className="log-out">
 
-
                             <span>
                                 <Goto route={users.role + "-dashboard"} className="dash" />
                             </span>

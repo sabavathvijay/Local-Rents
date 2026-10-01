@@ -136,3 +136,31 @@ color: rgb(251, 244, 248);
     background-color: rgba(0, 0, 0, 0.373);
     color: aliceblue;
 }
+
+#open{
+    
+    width: 30px;
+    height: 40px;
+
+    display: flex;
+    position: fixed;
+    left: -1px;
+    top: 70%;
+    z-index: 5;
+    align-self: start;
+    
+    justify-self: center;
+border-radius: 10% 50%  50% 10%;
+/* border: solid rgb(203, 192, 192); */
+text-align: center;
+    background-color: rgba(60, 58, 62, 0.742);
+}
+
+.out{
+    background-color: rgb(229, 234, 238);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
