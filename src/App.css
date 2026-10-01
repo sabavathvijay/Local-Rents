@@ -1,13 +1,20 @@
+
+.mainApp{
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+}
 .app{
   width: 100%;
 
   background-color: rgba(70, 77, 77, 0.674);
- min-height: 100vh;
-  max-height: auto;
+ height: 100%;
+ 
 display: flex;
 flex-direction: column;
 gap: 2px;
-
+height: auto;
   position: relative;
 }
 .nav{
@@ -16,19 +23,20 @@ gap: 2px;
 
   position: sticky;
   top: 0px;
-  z-index: 100;
+  z-index:3;
  
   background-color: rgb(175, 152, 177);
   height:fit-content;
-  max-height:8%;
+
 
 }
 
 #main{
 
-display: flex;
-min-height: 100vh;
+
+  display: flex;
+min-height: 100%;
   width: 100%;
- 
+
   background-color: none;
 }

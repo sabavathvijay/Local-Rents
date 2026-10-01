@@ -43,15 +43,15 @@ const App = () => {
 
   localStorage.setItem("logedIn", "logedIn")
   return (
-    <div className="">
+    <div className="mainApp">
 
       <MyContextAPI.Provider value={{ status, setStatus,user, setUser }} >
       
-      <div className="app">
-
         <div className="nav">
            <Navbar />
         </div>
+      <div className="app">
+
       
 
        <main id='main'>
