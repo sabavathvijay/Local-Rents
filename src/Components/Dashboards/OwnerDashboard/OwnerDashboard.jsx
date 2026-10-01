@@ -72,7 +72,7 @@ const OwnerDashboard = () => {
         return (
           <div className="main-container">
 
-            <div className="about">
+            <div className="welcome">
               <h2>Welcome to User Dashboard</h2>
             </div>
 
