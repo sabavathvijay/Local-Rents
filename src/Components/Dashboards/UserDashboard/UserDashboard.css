@@ -16,8 +16,9 @@
     display: flex;
     position: fixed;
     left: 2px;
+    top: 70%;
     z-index: 5;
-    align-self: center;
+    align-self: start;
     
     justify-self: center;
 border-radius: 10% 50%  50% 10%;

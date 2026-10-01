@@ -5,7 +5,8 @@ import { useState } from 'react'
 // Icons
 import { CgProfile } from "react-icons/cg";
 import { CgLogOut } from "react-icons/cg";
-import { CgMenuGridR } from "react-icons/cg";
+import { RiMenuFold4Fill } from "react-icons/ri";
+import { MdCancel } from "react-icons/md";
 
 
 
@@ -94,7 +95,10 @@ const UserDashboard = () => {
            
           }}
         >
-     <span><CgMenuGridR /></span>
+     <span>
+        {open?(<MdCancel />
+      ):(<RiMenuFold4Fill />)}
+     </span>
         </div>
 
       <div className={open?"aside ":"open"}>
@@ -147,9 +151,9 @@ const UserDashboard = () => {
                 // alert("go-out")
                 setStatus("home")
                 localStorage.setItem("users", null)
-                setUser(null)
                 localStorage.setItem("status", "home")
                 localStorage.clear
+                setUser(null)
                 nav('/home')
               }}
             >

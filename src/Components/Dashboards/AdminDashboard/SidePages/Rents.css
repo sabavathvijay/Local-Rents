@@ -1,0 +1,8 @@
+#sideRents{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    flex: 1;
+    background-color: rgb(96, 193, 164);
+} 

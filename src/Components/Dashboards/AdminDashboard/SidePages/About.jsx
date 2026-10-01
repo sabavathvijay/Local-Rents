@@ -3,11 +3,10 @@ import './About.css'
 
 const About = () => {
   return (
-    <div id='sideAbout'>
-      <h2>
-        About</h2>
-
-    </div>
+    <div
+    id='sideAbout'
+    ><h2>
+      About</h2></div>
   )
 }
 

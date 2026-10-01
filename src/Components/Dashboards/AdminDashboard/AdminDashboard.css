@@ -1,18 +1,85 @@
-#admin{
-    background-color: aliceblue;
-    display: flex;
-    min-width:100%;
-    /* max-width: 20%; */
-}
-.main{
-
-      /* min-width:calc(100% -20%); */
+#user {
+   /* background-color: rgb(86, 84, 84); */
     width: 100%;
-    background-color: aqua;
+    min-height: calc(100vh);
+    display: flex;
+
+
 }
+
+
+#open{
+    
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    position: fixed;
+    left: 2px;
+    top: 70%;
+    z-index: 5;
+    align-self: start;
+    
+    justify-self: center;
+border-radius: 10% 50%  50% 10%;
+/* border: solid rgb(203, 192, 192); */
+text-align: center;
+    background-color: rgba(255, 252, 252, 0.359);
+}
+
+#open span{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding: 2px;
+    font-size: larger;
+
+    
+
+}
+.open{
+    display:none ;
+    
+}
+
+
+
+
+
+
+
+
+.main {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(108, 131, 131);
+    display: flex;
+
+}
+
+.main-container {
+
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+
+
+
+
+
 
 .aside{
-    background-color: yellowgreen;
+ display: flex;
+ background-color: none;
+}
+.subAside{
+
+   
+    width: 100%;
+       background-color: rgb(126, 164, 87);
     height: 100%;
     min-width: fit-content;
     width: 20%;
@@ -52,8 +119,10 @@ color: rgb(251, 244, 248);
 
 }
 
+
+
 .out{
-    background-color: rgb(204, 147, 147);
+    background-color: rgba(110, 160, 197, 0.667);
     width: 100%;
     display: flex;
     justify-content: center;

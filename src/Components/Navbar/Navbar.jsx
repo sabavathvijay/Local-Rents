@@ -13,7 +13,7 @@ import { useContext } from 'react'
 import { MyContextAPI } from '../Configs/ContextAPI/MyContextAPI'
 import Goto from '../CustomComp/Goto'
 
-
+	"logedIn"
 
 
 const Navbar = () => {
@@ -38,17 +38,17 @@ const Navbar = () => {
         <nav>
 
 
-            <motion.div 
-            
-            whileHover={{
-              translateX:2, scale:1.2,
-              color:"white"
-            }}
-            
-            className="logo"
-            onClick={()=>{
-                nav("/home")
-            }}
+            <motion.div
+
+                whileHover={{
+                    translateX: 2, scale: 1.2,
+                    color: "white"
+                }}
+
+                className="logo"
+                onClick={() => {
+                    nav("/home")
+                }}
             >
                 Local-Rents</motion.div>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
 
                 {/* //Role */}
                 {/* //Logout */}
-             
+
 
 
 
@@ -87,25 +87,30 @@ const Navbar = () => {
 
                 }
                 {
-                    status === "home" && users && 
+                    status === "home" && users &&
                     <>
-                       <div className="user-role"><b>{users.role}:</b><span>{users.name}</span></div>
+                        <div className="user-role"><b>{users.role}:</b><span>{users.name}</span></div>
                         <div className="log-out">
-                                <span>
-                                    <Goto  route={users.role+"-dashboard"} className="dash" />
-                                </span>
+
+
+                            <span>
+                                <Goto route={users.role + "-dashboard"} className="dash" />
+                            </span>
+
+
+
                             <button
                                 onClick={() => {
                                     setStatus("home")
                                     localStorage.setItem("users", null)
-                                    setUser(null)
                                     localStorage.setItem("status", "home")
                                     localStorage.clear
+                                    setUser(null)
                                     nav('/home')
 
                                 }}
                             ><CgLogOut />
-</button>
+                            </button>
                         </div>
                     </>
 
@@ -165,47 +170,78 @@ const Navbar = () => {
 
                 {/* //Profile */}
 
-               
 
-            
 
-                   {
+
+
+                {
                     status === "logedIn" && <>
 
                         <div className="user-role"><b>{users.role}:</b><span>{users.name}</span></div>
-                       
-                       {
 
-                    status === "logedIn" &&
-                    <>
-                        <div className="profile">
-                            <span
-                                onClick={() => {
-                                    //    alert("click")
-                                    nav("./profile", { state: { user } })
-                                }}
-                            ><CgProfile /></span>
+                        {
 
-                        </div>
+                            status === "logedIn" && !user &&
+                            <>
+                                <div className="profile">
 
-                    </>
 
-                }
+                                    <span
+                                        onClick={() => {
+                                            //    alert("click")
+                                            nav("/profile")
+
+
+                                        }}
+                                    ><CgProfile /></span>
+
+                                </div>
+
+                            </>
+
+                        }
                         <div className="log-out">
 
                             <button
                                 onClick={() => {
                                     setStatus("home")
                                     localStorage.setItem("users", null)
-                                    setUser(null)
                                     localStorage.setItem("status", "home")
                                     localStorage.clear
+                                    setUser(null)
                                     nav('/home')
 
                                 }}
                             ><CgLogOut />
-</button>
+                            </button>
                         </div>
+
+                        {
+
+                            user && status=="home"  &&
+                            
+
+                            <div className="log-out">
+
+                                <button
+                                    onClick={() => {
+                                        setStatus("home")
+                                        localStorage.setItem("users", null)
+                                        localStorage.setItem("status", "home")
+                                        localStorage.clear
+                                        setUser(null)
+
+                                        nav('/home')
+
+                                    }}
+                                ><CgLogOut />
+                                </button>
+                            </div>
+
+
+                        }
+
+
                     </>
                 }
 

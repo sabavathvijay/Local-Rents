@@ -11,9 +11,9 @@ import { MdCancel } from "react-icons/md";
 
 
 
-import './OwnerDashboard.css'
-import About from './SidePages/About'
-import Contact from './SidePages/Contact'
+import './AdminDashboard.css'
+import About from '../SidePages/About'
+import Contact from '../SidePages/Contact'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { MyContextAPI } from '../../Configs/ContextAPI/MyContextAPI'
@@ -21,7 +21,7 @@ import { MyContextAPI } from '../../Configs/ContextAPI/MyContextAPI'
 import Rents from './SidePages/Rents'
 import Goto from '../../CustomComp/Goto'
 
-const OwnerDashboard = () => {
+const AdminDashboard = () => {
   const [click, setClick] = useState("")
   const [open, setOpen] = useState(false)
   const { status, setStatus } = useContext(MyContextAPI);
@@ -151,9 +151,9 @@ const OwnerDashboard = () => {
                 // alert("go-out")
                 setStatus("home")
                 localStorage.setItem("users", null)
+                setUser(null)
                 localStorage.setItem("status", "home")
                 localStorage.clear
-                setUser(null)
                 nav('/home')
               }}
             >
@@ -181,4 +181,4 @@ const OwnerDashboard = () => {
   )
 }
 
-export default OwnerDashboard
+export default AdminDashboard

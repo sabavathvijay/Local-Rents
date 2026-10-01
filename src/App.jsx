@@ -38,7 +38,7 @@ const App = () => {
       )
 
 
-      console.log("USER ===> ",user)
+     
 
 
   localStorage.setItem("logedIn", "logedIn")

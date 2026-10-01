@@ -69,6 +69,10 @@ const Login = () => {
 
         }
 
+     
+
+
+
         isUserExist();
     }, [users])
 
@@ -80,6 +84,7 @@ const Login = () => {
 
     //======> 4
 
+    
 
     const validateUser = async () => {
 
@@ -95,19 +100,20 @@ const Login = () => {
             switch (user.role) {
                 case "User":
                     toast.success("Welcome to USER Dashboard")
-                    nav('/user-dashboard')
+                    nav('/User-dashboard')
                     break;
                 case "Owner":
                      toast.success("Welcome to OWNER Dashboard")
-                    nav('/owner-dashboard')
+                    nav('/Owner-dashboard')
                     break;
                 case "Admin":
                   toast.success("Welcome to ADMIN Dashboard")
-                    nav('/admin-dashboard')
+                    nav('/Admin-dashboard')
                     break;
 
                default :
                     toast.warning("Invalid User");
+
                     break;
             }
 
@@ -141,6 +147,8 @@ const Login = () => {
 
     }
 
+
+     
 
 
     return (

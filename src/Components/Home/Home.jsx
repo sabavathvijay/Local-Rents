@@ -14,6 +14,12 @@ const Home = () => {
   const nav = useNavigate()
   const { status, setStatus } = useContext(MyContextAPI)
 
+
+    if(status=="logedIn"){
+            nav("/home")
+            localStorage.setItem("status","home")
+        }
+
   return (
     <div
       id='home' >

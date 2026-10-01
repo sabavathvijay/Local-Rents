@@ -1,0 +1,8 @@
+#sideContact{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    flex: 1;
+    background-color: rgb(59, 82, 139);
+} 

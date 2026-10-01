@@ -89,6 +89,8 @@ console.log(" From Register page : ",user)
 
     }
 
+    
+
     return (
         <div id='registerFit'>
 
