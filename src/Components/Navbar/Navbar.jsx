@@ -63,29 +63,7 @@ const Navbar = () => {
 
                 {/* //Pages */}
 
-                {
-                    status === "home" && !users &&
-                    <>
-                        <div className="register">
-                            <button
-                                onClick={() => {
-                                    setStatus("register")
-                                    nav('/register')
-                                }}
-                            >Register</button>
-                        </div>
-                        <div className="login">
-                            <button
-
-                                onClick={() => {
-                                    setStatus("login")
-                                    nav('/login')
-                                }}
-                            >Login</button>
-                        </div>
-                    </>
-
-                }
+           
                 {
                     status === "home" && users &&
                     <>
